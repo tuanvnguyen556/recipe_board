@@ -1,0 +1,12 @@
+@font-face{
+    font-family: 'young-serif';
+    src: url('../assets/fonts/young-serif/YoungSerif-Regular.ttf') format('truetype');
+}
+
+body {
+    font-family: 'young-serif', sans-serif;
+}
+
+main section{
+    
+}
