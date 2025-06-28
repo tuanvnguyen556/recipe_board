@@ -17,11 +17,10 @@
 
 * {
     margin: 0;
+    padding: 0;
 }
 
 html, body {
-    padding: 0;
-    margin: 0;
     overflow-x: hidden;
 }
 body {
@@ -42,9 +41,36 @@ main section:not(.image-section) {
     margin-right: auto;
 }
 
-main section {
-    min-width: 315px;
+
+main section, div.attribution {
+    min-width: 300px;
     max-width: 800px;
+}
+
+.attribution{
+    padding: 0 2.5rem;
+    margin: 0 auto;
+}
+
+main {
+    margin-bottom: 3rem;
+}
+
+/* image styles */
+.image-section {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+.image-container {
+    display: flex;
+    justify-content: center;    
+}
+
+.recipe-image {
+    max-width: 100%;
+    height: auto;
+    display: block; 
 }
 
 .introduction-section p {
@@ -76,8 +102,29 @@ article li::marker {
 
 }
 
+.ingredients-ul {
+    margin-bottom: 2rem;
+}
+
+.ingredients-section {
+    margin-bottom: 2rem;
+}
+
 .ingredients-section h2{
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
+}
+
+
+ol, p {
+    line-height: 1.4rem;
+}
+
+.ingredients-ul li{
+    margin-bottom: 1rem;
+}
+
+.ingredients-ul, .ingredients-ul li {
+    padding-left: 1rem;
 }
 .ingredients-ul li::marker, ol li::marker {
     color: var(--red);
@@ -95,17 +142,16 @@ li::marker{
     white-space: 5px;
 }
 
-
 article ul{
     padding-top: 1.2rem;
     padding-left: 1.2rem;
     
 }
+
 article li{
     padding-left: 0.7rem;
     line-height: 2rem;
     overflow-wrap: break-word;
-    max-width: 12rem;
     color: var(--text-gray)
 }
 
@@ -127,10 +173,19 @@ li strong{
 
 hr {
     border-top: 0.8px solid rgb(216, 216, 216);
+
 }
 
 .ingredients-ul li::marker {
     color: var(--red);
+}
+
+.ingredients-ul li{
+    color: var(--text-gray);
+}
+
+.instructions-section {
+    margin-bottom: 2rem;
 }
 
 .instructions-section h2 {
@@ -139,28 +194,49 @@ hr {
 
 .instructions-ol {
     padding-left: 1.3rem;
+    margin-bottom: 2rem;
 }
 
 .instructions-ol li{
     padding-left: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text-gray);
 }
 
-
-/* image styles */
-.image-section {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-}
-.image-container {
-    display: flex;
-    justify-content: center;    
+.nutrition-section h2{
+    margin-bottom: 1.4rem;
 }
 
-.recipe-image {
-    max-width: 100%;
-    height: auto;
-    display: block; 
+.nutrition-section p {
+    color: var(--text-gray);
+    margin-bottom: 1.4rem;
+}
+
+.nutrition-section div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 2rem;
+}
+
+.nutrition-section hr{
+    margin: 0.75rem 0;
+}
+
+.nutrition-div span:nth-child(1){
+    color: var(--text-gray);
+}
+
+.nutrition-div span:nth-child(2){
+    font-weight: bold;
+    color: var(--red);
+}
+
+@media (max-width: 320px){
+    main section:not(.image-section), div.attribution{
+        margin: 0 auto;
+        padding: 0.5rem 0.5rem;
+    }
+
 }
 
 @media (min-width: 601px){
@@ -175,5 +251,8 @@ hr {
         border-radius: 10px;
     }
 
+    .introduction-section p {
+        max-width: 100%;
+    }
 
 }
